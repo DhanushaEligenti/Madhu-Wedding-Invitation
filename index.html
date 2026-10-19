@@ -169,6 +169,25 @@ body.live .rv.in{opacity:1;transform:none}
  html[lang=te] .free{width:min(100%,820px)}
  html[lang=te] .panel{width:min(100%,900px)}
 }
+.music{position:fixed;left:14px;bottom:20px;z-index:50;display:none;width:46px;height:46px;border-radius:50%;border:2px solid #ffd96b;background:linear-gradient(135deg,#0a9a93,#065f5a);box-shadow:0 6px 16px rgba(0,50,50,.45);cursor:pointer;place-items:center}
+body.live .music{display:grid}
+.music svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.music.on{animation:pulse 2.2s infinite}
+.music .x{display:none}.music.off .x{display:block}.music.off .w{display:none}
+#yt{position:fixed;left:-20px;bottom:0;width:2px;height:2px;border:0;opacity:0;pointer-events:none}
+.arrows{position:fixed;right:14px;bottom:20px;z-index:50;display:none;flex-direction:column;gap:10px}
+body.live .arrows{display:flex}
+.arrows button{width:46px;height:46px;border-radius:50%;border:2px solid #ffd96b;background:linear-gradient(135deg,#e8386f,#8e0f3a);box-shadow:0 6px 16px rgba(70,15,25,.45);cursor:pointer;display:grid;place-items:center;transition:transform .2s,opacity .3s}
+.arrows button:hover{transform:scale(1.1)}
+.arrows button[hidden]{display:none}
+.arrows svg{width:26px;height:26px;fill:none;stroke:#fff;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
+#dnBtn svg{animation:nudge 1.4s ease-in-out infinite}#upBtn svg{animation:nudge 1.4s ease-in-out infinite reverse}
+@keyframes nudge{50%{transform:translateY(4px)}}
+.nxt{margin-top:14px;padding:9px 24px;font-size:clamp(.95rem,3.2vw,1.15rem)}
+#pop{position:fixed;inset:0;pointer-events:none;z-index:55;overflow:hidden}
+.cf{position:absolute;width:9px;height:13px;border-radius:2px;animation:cf var(--d,1.6s) cubic-bezier(.2,.7,.3,1) forwards}
+@keyframes cf{0%{opacity:1;transform:translate(0,0) rotate(0)}55%{opacity:1;transform:translate(var(--dx),var(--dy)) rotate(calc(var(--r)/2))}100%{opacity:0;transform:translate(calc(var(--dx)*1.15),calc(var(--dy) + 280px)) rotate(var(--r))}}
+.pop.hrt{width:var(--s,28px);height:var(--s,28px);font-size:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23e5102a' stroke='%23a5001c' stroke-width='.8' d='M12 21s-8-5.2-8-11a4.5 4.5 0 018-2.7A4.5 4.5 0 0120 10c0 5.8-8 11-8 11z'/%3E%3Cpath fill='%23ff7a85' d='M7.2 8.2a2.2 2.2 0 011.9-1.3c.4 0 .6.5.2.7-1 .4-1.6 1-1.8 1.8-.1.5-.7.3-.6-.2z'/%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 3px 5px rgba(180,0,20,.4))}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}}
 </style>
 </head>
@@ -186,7 +205,9 @@ body.live .rv.in{opacity:1;transform:none}
 </defs></svg>
 
 <div class="bg" id="bg-a"></div><div class="bg" id="bg-b"></div><div class="bg" id="bg-c"></div>
-<div id="petals"></div>
+<div id="petals"></div><div id="pop"></div>
+<button class="music on" id="musicBtn" aria-label="Music on/off"><svg viewBox="0 0 24 24"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/><path class="x" d="M3 3l18 18"/></svg></button>
+<div class="arrows"><button id="upBtn" aria-label="Previous scene" hidden><svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button><button id="dnBtn" aria-label="Next scene"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button></div>
 <div class="lang"><button class="bt" data-l="te">తెలుగు</button><button class="be" data-l="en">EN</button></div>
 
 <!-- COVER -->
@@ -238,7 +259,7 @@ body.live .rv.in{opacity:1;transform:none}
       <h3><span class="te">మధు</span><span class="en">Madhu</span></h3><p><span class="te">చి. మేడిశెట్టి మధుసూదన రావు</span><span class="en">Chi. Medisetti Madhusudhana Rao</span></p></div>
     <div class="amp">&amp;</div>
     <div class="person rv r"><div class="flip"><div class="flipin"><img src="face-bride.jpg" alt="Dhanusha, the bride" loading="lazy"><img class="bk" src="bride.jpg" alt="" loading="lazy"></div></div>
-      <h3><span class="te">ధనుష</span><span class="en">Dhanusha</span></h3><p><span class="te">చి.సౌ. ఏలిగెంటి ధనుష దేవి</span><span class="en">Chi.Sou. Eligenti Dhanusha Devi</span></p></div>
+      <h3><span class="te">ధనుష</span><span class="en">Dhanusha</span></h3><p><span class="te">చి.సౌ. ఎలిగంటి ధనుష దేవి</span><span class="en">Chi.Sou. Eligenti Dhanusha Devi</span></p></div>
   </div>
   <p class="hint"><span class="te">ఫోటోను తాకండి ↻</span><span class="en">Tap a photo to flip ↻</span></p>
 </div></section>
@@ -296,8 +317,18 @@ document.querySelectorAll('.panel').forEach(p=>p.insertAdjacentHTML('afterbegin'
 
 /* open: doors swing open -> zoom into Ganesha -> fade into the invitation */
 let opened=false;
+/* background music: YouTube video played hidden, looped. Starts on the first tap (browsers need a tap to allow sound). */
+const YT='g6aD_kIwGqo';let music=false,yt;
+function ytCmd(f){yt&&yt.contentWindow.postMessage(JSON.stringify({event:'command',func:f,args:[]}),'*')}
+function startMusic(){
+  yt=document.createElement('iframe');yt.id='yt';yt.allow='autoplay';
+  yt.src='https://www.youtube.com/embed/'+YT+'?autoplay=1&loop=1&playlist='+YT+'&controls=0&playsinline=1&enablejsapi=1&rel=0';
+  document.body.appendChild(yt);music=true;
+}
+$('musicBtn').onclick=()=>{if(!yt)return startMusic();music=!music;ytCmd(music?'playVideo':'pauseVideo');$('musicBtn').classList.toggle('off',!music);$('musicBtn').classList.toggle('on',music)};
 function openCard(){
   if(opened)return; opened=true;
+  startMusic();
   cover.classList.add('opening');
   setTimeout(()=>cover.classList.add('zoom'),2300);
   setTimeout(()=>{cover.classList.add('out');document.body.classList.remove('locked');document.body.classList.add('live');start();petals()},3600);
@@ -307,16 +338,30 @@ cover.onclick=openCard;
 cover.onkeydown=e=>(e.key==='Enter'||e.key===' ')&&openCard();
 
 function start(){
+  const scenes=[...document.querySelectorAll('.sc')], last=scenes.length-1; let cur=0;
+  const go=i=>scenes[Math.max(0,Math.min(last,i))].scrollIntoView({behavior:'smooth'});
   const bgIO=new IntersectionObserver(es=>es.forEach(x=>{
     if(!x.isIntersecting)return;
     Object.values(bgs).forEach(b=>b.classList.toggle('on',b===bgs[x.target.dataset.bg]));
+    cur=scenes.indexOf(x.target);$('upBtn').hidden=cur===0;$('dnBtn').hidden=cur===last;
   }),{rootMargin:'-50% 0px -50% 0px'});
-  document.querySelectorAll('.sc').forEach(s=>bgIO.observe(s));
+  scenes.forEach(s=>bgIO.observe(s));
+  $('upBtn').onclick=()=>go(cur-1);$('dnBtn').onclick=()=>go(cur+1);
+  // a Next button at the bottom of every scene card
+  scenes.forEach((s,i)=>{if(i===0)return;const p=s.querySelector('.panel');
+    p.insertAdjacentHTML('beforeend',i===last?'<button class="btn nxt" data-go="0"><span class="te">↑ మొదటికి వెళ్ళండి</span><span class="en">↑ Back to top</span></button>':'<button class="btn nxt" data-go="'+(i+1)+'"><span class="te">ముందుకు ↓</span><span class="en">Next ↓</span></button>');
+    p.lastElementChild.onclick=e=>go(+e.currentTarget.dataset.go)});
+  // poppers when the couple and date scenes appear
+  [2,3].forEach(i=>new IntersectionObserver((es,o)=>es.forEach(x=>{if(x.isIntersecting){confetti(50,34,56);o.disconnect()}}),{threshold:.7}).observe(scenes[i]));
+  confetti(4,96,44);confetti(96,96,44);
   const io=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('in')),{threshold:.2});
   document.querySelectorAll('.rv').forEach(el=>io.observe(el));
   document.querySelectorAll('[data-next]').forEach(b=>b.onclick=()=>b.closest('.sc').nextElementSibling.scrollIntoView({behavior:'smooth'}));
   // grand finale: hearts & flowers rise when the last scene appears
-  new IntersectionObserver((es,o)=>es.forEach(x=>{if(x.isIntersecting){burst();o.disconnect()}}),{threshold:.6}).observe($('end'));
+  new IntersectionObserver((es,o)=>es.forEach(x=>{if(x.isIntersecting){burst();confetti(22,58,60);confetti(78,58,60);setTimeout(()=>confetti(50,40,70),600);o.disconnect()}}),{threshold:.6}).observe($('end'));
+  // red hearts keep floating up while the ending is on screen
+  new IntersectionObserver(es=>es.forEach(x=>endIn=x.isIntersecting),{threshold:.4}).observe($('end'));
+  setInterval(()=>{if(endIn&&!document.hidden)heart()},420);
   // 3D tilt on cards (mouse / pen)
   document.querySelectorAll('.panel').forEach(p=>{
     p.addEventListener('pointermove',e=>{if(e.pointerType==='touch')return;const r=p.getBoundingClientRect();
@@ -334,10 +379,24 @@ function petals(){
     $('petals').appendChild(p);
   }
 }
+let endIn=false;const reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function confetti(x,y,n){
+  if(reduced)return;const c=['#e8386f','#ffd96b','#0a7f7a','#f28c0f','#c1121f','#ffffff','#7b2cbf'];
+  for(let i=0;i<n;i++){
+    const a=(-90+(Math.random()-.5)*150)*Math.PI/180,d=120+Math.random()*260,p=document.createElement('i');p.className='cf';
+    p.style.cssText=`left:${x}%;top:${y}%;background:${c[i%7]};--dx:${Math.cos(a)*d}px;--dy:${Math.sin(a)*d}px;--r:${Math.random()*720-360}deg;--d:${1.2+Math.random()*.9}s`;
+    $('pop').appendChild(p);setTimeout(()=>p.remove(),2400);
+  }
+}
+function heart(){
+  if(reduced)return;const p=document.createElement('i');p.className='pop hrt';
+  p.style.cssText+=`;left:${Math.random()*100}%;--s:${22+Math.random()*26}px;--dx:${Math.random()*100-50}px;--r:${Math.random()*50-25}deg;--t:${4+Math.random()*3}s`;
+  $('petals').appendChild(p);setTimeout(()=>p.remove(),7500);
+}
 function burst(){
-  const e=['❤','🌸','✨','🪷','💛'];
-  for(let i=0;i<30;i++){
-    const p=document.createElement('i');p.className='pop';p.textContent=e[i%5];p.style.fontStyle='normal';
+  const e=['❤️','🌸','❤️','🪷','✨','❤️','💛'];
+  for(let i=0;i<42;i++){
+    const p=document.createElement('i');p.className='pop';p.style.fontStyle='normal';if(e[i%7]==='❤️'){p.classList.add('hrt');p.style.setProperty('--s',(20+Math.random()*22)+'px')}else p.textContent=e[i%7];
     p.style.cssText+=`;left:${Math.random()*100}%;--dx:${Math.random()*120-60}px;--r:${Math.random()*360-180}deg;--t:${3+Math.random()*3}s;animation-delay:${Math.random()*1.5}s`;
     $('petals').appendChild(p);setTimeout(()=>p.remove(),8000);
   }
