@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>మేడిశెట్టి వారి పెళ్లి ఆహ్వానం</title>
+<meta name="description" content="Medisetti Vari Pelli Ahvanam — Dhanusha & Madhu, 29 October 2026, 7:30 PM.">
+<meta property="og:title" content="Medisetti Vari Pelli Ahvanam — Dhanusha & Madhu">
+<meta property="og:description" content="29 October 2026 · 7:30 PM — join us to bless the couple.">
+<meta property="og:image" content="face-groom.jpg">
+<meta name="theme-color" content="#faebcc">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:wght@500;600&family=Noto+Serif+Telugu:wght@500;700&family=Playfair+Display:wght@600;700&family=Ramaraja&family=Tenali+Ramakrishna&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#5e1236;--gold:#b8860b;--crimson:#c1121f;--teal:#0a7f7a;--magenta:#c2185b;--saffron:#e8590c;--gold2:#d9a441;--rose:#c2456b;--maroon:#7a1a35;--panel:#fffaf0;
+ --head:'Playfair Display',serif;--body:'Lora',serif;--script:'Great Vibes',cursive;--bw:500;--hw:700;--lh:1.65}
+html[lang=te]{--head:'Ramaraja','Noto Serif Telugu',serif;--body:'Noto Serif Telugu',serif;--script:'Tenali Ramakrishna','Ramaraja',serif;--bw:500;--hw:400;--lh:1.8}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-snap-type:y proximity;-webkit-text-size-adjust:100%}
+body{font-family:var(--body);font-weight:var(--bw);font-size:clamp(1.05rem,min(3.7vw,2.5svh),1.5rem);color:var(--ink);background:#faebcc;overflow-x:hidden;line-height:var(--lh);overflow-wrap:break-word}
+body.locked{overflow:hidden;height:100svh}
+html[lang=te] .en,html[lang=en] .te{display:none}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--head);font-weight:var(--hw);line-height:1.35}
+.script{font-family:var(--script);font-weight:400}
+
+/* ===== fixed backgrounds that swap per scene ===== */
+.bg{position:fixed;inset:0;z-index:0;opacity:0;transition:opacity 1.2s ease;pointer-events:none;overflow:hidden;background-color:var(--pc)}
+.bg.on{opacity:1}
+#bg-a{--img:url(bg-a.webp);--pc:#f1d8b0}#bg-b{--img:url(bg-b.webp);--pc:#fde5bd}#bg-c{--img:url(bg-c.webp);--pc:#faebcc}
+.bg::before,.bg::after{content:'';position:absolute;left:0;right:0;height:min(58vw,36%);background:var(--img) no-repeat;background-size:145% auto}
+.bg::before{top:0;background-position:left top;-webkit-mask-image:linear-gradient(#000 60%,transparent);mask-image:linear-gradient(#000 60%,transparent)}
+.bg::after{bottom:0;background-position:right bottom;-webkit-mask-image:linear-gradient(0deg,#000 60%,transparent);mask-image:linear-gradient(0deg,#000 60%,transparent)}
+@media (min-width:900px) and (min-aspect-ratio:1/1){
+ .bg{background-image:var(--img);background-size:cover;background-position:center}
+ .bg::before,.bg::after{display:none}
+}
+
+/* language toggle */
+.lang{position:fixed;top:max(14px,env(safe-area-inset-top));right:14px;z-index:60;display:flex;border:1.5px solid var(--maroon);border-radius:30px;overflow:hidden;background:rgba(255,248,230,.96);box-shadow:0 4px 14px rgba(70,20,10,.3)}
+.lang button{padding:7px 16px;border:0;background:none;color:var(--ink);font:600 .9rem 'Lora','Noto Serif Telugu',serif;cursor:pointer}
+html[lang=te] .lang .bt,html[lang=en] .lang .be{background:var(--maroon);color:#fff3d6}
+
+#petals{position:fixed;inset:0;pointer-events:none;z-index:15;overflow:hidden}
+.petal{position:absolute;top:-30px;width:12px;height:16px;border-radius:80% 0 80% 0;opacity:.75;animation:fall linear infinite}
+@keyframes fall{to{transform:translate(var(--dx),110vh) rotate(720deg)}}
+.pop{position:absolute;bottom:-40px;font-size:clamp(1.2rem,4vw,2rem);animation:rise var(--t) ease-out forwards}
+@keyframes rise{to{transform:translate(var(--dx),-110vh) rotate(var(--r));opacity:0}}
+
+/* ===== cover: gatefold card opens from the centre ===== */
+.cover{--sw:max(100vw,min(175vw,177.8svh));position:fixed;inset:0;z-index:25;background:#6b3f17;cursor:pointer;overflow:hidden;-webkit-tap-highlight-color:transparent;transition:opacity 1.3s}
+.cover.out{opacity:0;pointer-events:none}
+.fill{position:absolute;inset:-24px;background:url(card-closed.webp) center/cover;filter:blur(16px) brightness(.85)}
+.persp{position:absolute;inset:0;perspective:1800px}
+.stage{position:absolute;left:50%;top:50%;width:var(--sw);aspect-ratio:1672/941;transform:translate(-50%,-50%);transform-style:preserve-3d;transition:transform 2.6s cubic-bezier(.5,0,.3,1),opacity 1.6s}
+.stage>img.base{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;-webkit-mask-image:radial-gradient(ellipse 75% 85% at 50% 50%,#000 60%,transparent 100%);mask-image:radial-gradient(ellipse 75% 85% at 50% 50%,#000 60%,transparent 100%)}
+.inside{position:absolute;left:22.7%;top:20.7%;width:57.1%;height:58.5%;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle,#fffaf0,#f7e6bf 80%);opacity:0;transition:opacity .3s}
+.cover.opening .inside{opacity:1}
+.inside::before{content:'';position:absolute;left:50%;top:50%;width:200%;aspect-ratio:1;margin:-100% 0 0 -100%;background:repeating-conic-gradient(rgba(255,215,120,.5) 0 6deg,transparent 6deg 18deg);-webkit-mask-image:radial-gradient(circle,#000,transparent 40%);mask-image:radial-gradient(circle,#000,transparent 40%);animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.inside img{position:relative;width:calc(var(--sw)*.255);height:calc(var(--sw)*.255);max-width:none;border-radius:50%;border:.5vw solid var(--gold2);object-fit:cover;object-position:center 35%;animation:glow 2.6s ease-in-out infinite}
+.leaf{position:absolute;top:20.7%;height:58.5%;transform-style:preserve-3d;transition:transform 1.9s cubic-bezier(.55,0,.25,1)}
+.leaf.l{left:22.7%;width:26.7%;transform-origin:0 50%}
+.leaf.r{left:49.4%;width:30.4%;transform-origin:100% 50%}
+.leaf .f,.leaf .k{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden}
+.leaf .f img{position:absolute;max-width:none;top:-35.4%;height:170.9%}
+.leaf.l .f img{width:374.5%;left:-85%}
+.leaf.r .f img{width:328.9%;left:-162.5%}
+.leaf .k{transform:rotateY(180deg);background:url(bg-c.webp) center/cover,#f3dfb0;box-shadow:inset 0 0 0 .4vw #d9a441,inset 0 0 30px rgba(150,100,20,.4)}
+.cover.opening .leaf.l{transform:rotateY(-168deg)}
+.cover.opening .leaf.r{transform:rotateY(168deg)}
+.cover.zoom .stage{transform:translate(-50%,-50%) scale(2.6);opacity:0}
+.tap{position:absolute;z-index:3;left:50%;top:50%;transform:translate(-50%,-50%);padding:13px 28px;border:2px solid var(--gold2);border-radius:40px;background:rgba(70,12,28,.92);color:#fff3d6;font:600 clamp(1rem,3.3vw,1.3rem) var(--body);white-space:nowrap;animation:pulse 2s infinite;transition:opacity .5s}
+@keyframes pulse{50%{box-shadow:0 0 0 14px rgba(217,164,65,.3)}}
+.cover.opening .tap{opacity:0}
+
+/* ===== scenes ===== */
+.sc{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:clamp(58px,9svh,100px) max(5%,22px);scroll-snap-align:start;position:relative;z-index:5;text-align:center;perspective:1200px}
+h2{font-size:clamp(1.8rem,min(6.4vw,5svh),3.1rem);margin-bottom:.25em;background:linear-gradient(100deg,#c1121f 15%,#f28c0f 42%,#d9a000 55%,#c1121f 85%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gold 6s linear infinite;padding-bottom:.12em}
+@keyframes gold{to{background-position:-200% center}}
+.orn{display:flex;align-items:center;justify-content:center;gap:12px;margin:.3em 0 .8em;color:var(--gold2)}
+.orn::before,.orn::after{content:'';height:2px;width:clamp(36px,12vw,90px);background:linear-gradient(90deg,transparent,var(--gold2))}
+.orn::after{transform:scaleX(-1)}
+.orn i{width:11px;height:11px;background:var(--rose);transform:rotate(45deg);border:2px solid var(--gold2);animation:twinkle 3s infinite}
+@keyframes twinkle{50%{opacity:.45}}
+
+/* decorated card */
+.panel{position:relative;width:min(100%,780px);padding:clamp(50px,9vw,66px) clamp(24px,6vw,52px) clamp(40px,7vw,52px);border:1.5px solid #d9a441;border-radius:26px;background:linear-gradient(180deg,#fffefb,#fff5e0);box-shadow:0 1px 0 #fff inset,0 2px 6px rgba(80,20,30,.12),0 24px 50px -14px rgba(120,20,60,.45),0 0 0 6px rgba(255,255,255,.55);transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .35s ease-out;transform-style:preserve-3d;margin:16px 0}
+.panel::before,.panel::after{content:'';position:absolute;left:5px;right:5px;height:16px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 14'%3E%3Crect width='24' height='14' fill='%23fff1d0'/%3E%3Cpath d='M12 1l7 6-7 6-7-6z' fill='%23b0124a'/%3E%3Ccircle cx='12' cy='7' r='2' fill='%23ffd96b'/%3E%3Cpath d='M0 0h4L0 4zM24 0h-4l4 4zM0 14h4l-4-4zM24 14h-4l4-4z' fill='%23d9a441'/%3E%3C/svg%3E") repeat-x center/auto 100%;pointer-events:none}
+.panel::before{top:5px;border-radius:21px 21px 4px 4px}
+.panel::after{bottom:5px;border-radius:4px 4px 21px 21px}
+
+.co{position:absolute;width:clamp(22px,6vw,32px);aspect-ratio:1;pointer-events:none;border:0 solid #c98a00}
+.co.tl{top:30px;left:14px;border-width:2.5px 0 0 2.5px;border-top-left-radius:14px}.co.tr{top:30px;right:14px;border-width:2.5px 2.5px 0 0;border-top-right-radius:14px}.co.bl{bottom:30px;left:14px;border-width:0 0 2.5px 2.5px;border-bottom-left-radius:14px}.co.br{bottom:30px;right:14px;border-width:0 2.5px 2.5px 0;border-bottom-right-radius:14px}
+.ico{position:absolute;left:50%;top:-30px;width:60px;height:60px;margin-left:-30px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e8386f,#8e0f3a);border:3px solid #ffd96b;display:grid;place-items:center;box-shadow:0 8px 20px rgba(70,15,25,.4);animation:bob 4s ease-in-out infinite;transform:translateZ(40px)}
+.ico svg,.ic svg{width:60%;height:60%;fill:none;stroke:#ffe3a0;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+@keyframes bob{50%{margin-top:-5px}}
+.ic{display:grid;place-items:center;width:46px;height:46px;margin:0 auto 6px;border-radius:50%;background:linear-gradient(135deg,#e8386f,#8e0f3a);border:2px solid #ffd96b}
+.ic svg{width:58%;height:58%}
+
+/* Ganesha scene */
+.free{width:min(100%,640px);padding:18px 8px;background:radial-gradient(ellipse at center,rgba(255,248,230,.9) 45%,transparent 75%)}
+.title{font-size:clamp(2.1rem,min(8.4vw,6.4svh),3.7rem)!important;line-height:1.3}
+html[lang=en] .title{font-size:clamp(1.8rem,min(7vw,5.4svh),3.1rem)!important}
+.gwrap{position:relative;width:min(500px,92vw,49svh);aspect-ratio:1;margin:0 auto 8px;display:grid;place-items:center}
+.gwrap svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.gwrap text{font-family:var(--head);font-weight:var(--hw);font-size:40px;fill:#c1121f;stroke:#fff8e6;stroke-width:5px;paint-order:stroke;letter-spacing:.5px}
+html[lang=en] .gwrap text{font-size:31px}
+.gwrap .dots{fill:none;stroke:#d9a441;stroke-width:2.5;stroke-dasharray:1 7;stroke-linecap:round;transform-origin:200px 200px;animation:spin 60s linear infinite}
+.ganesha{width:62%;aspect-ratio:1;margin:0;border-radius:50%;border:5px solid var(--gold2);object-fit:cover;object-position:center 35%;animation:glow 3s ease-in-out infinite}
+@keyframes glow{0%,100%{box-shadow:0 0 24px rgba(217,164,65,.55);transform:scale(1)}50%{box-shadow:0 0 70px rgba(255,200,80,.95);transform:scale(1.03)}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;margin:12px 6px 0;padding:13px 28px;background:linear-gradient(135deg,#e8386f,#8e0f3a);color:#fff;border:2px solid #ffd96b;border-radius:40px;text-decoration:none;font:600 clamp(1rem,3.4vw,1.25rem) var(--body);cursor:pointer;box-shadow:0 8px 22px rgba(70,15,25,.4);transition:transform .2s;max-width:100%}
+.btn svg{width:1.3em;height:1.3em;flex:none;fill:none;stroke:#ffe3a0;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.btn:hover{transform:translateY(-3px) scale(1.04)}
+.btn.main{animation:pulse 2.4s infinite}
+.btn.wa{background:linear-gradient(135deg,#1f8a4c,#126b37)}
+
+.names-big{font-size:clamp(1.35rem,min(5vw,3.8svh),2.2rem);margin:.2em 0;color:var(--teal)}
+.with{font:400 clamp(2rem,7vw,3rem) var(--script);color:#e0306b;line-height:1.2}
+.parents{margin:.7em 0;padding:.6em .4em;border-top:1px dashed var(--gold2);border-bottom:1px dashed var(--gold2)}
+.parents b{color:var(--magenta);font-weight:700}
+.couple{display:flex;justify-content:center;align-items:flex-start;gap:clamp(6px,2.5vw,28px);margin-top:10px}
+.person{flex:1 1 0;min-width:0;max-width:250px}
+.flip{perspective:800px;cursor:pointer}
+.flipin{position:relative;width:100%;aspect-ratio:1;transform-style:preserve-3d;transition:transform 1s;animation:sway3d 6s ease-in-out infinite}
+.flip.on .flipin{transform:rotateY(180deg);animation:none}
+@keyframes sway3d{0%,100%{transform:rotateY(-14deg)}50%{transform:rotateY(14deg)}}
+.flipin img{position:absolute;inset:0;width:100%;height:100%;border-radius:50%;border:5px solid var(--gold2);object-fit:cover;box-shadow:0 10px 28px rgba(70,20,10,.4);backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.flipin img.bk{transform:rotateY(180deg);object-position:center 25%}
+.hint{font-size:.78em;color:var(--teal);opacity:.85;margin-top:2px}
+.person h3{font-size:clamp(1.45rem,5.4vw,2.3rem);color:var(--saffron);margin-top:8px}
+html[lang=en] .person h3{font-size:clamp(1.2rem,4.6vw,2.1rem)}
+.person p{font-size:clamp(.95rem,3.3vw,1.3rem);line-height:1.4}
+.amp{align-self:center;font:400 clamp(2rem,7vw,3.4rem) var(--script);color:#e0306b;animation:beat 1.8s infinite}
+@keyframes beat{50%{transform:scale(1.25)}}
+.cd{display:flex;gap:8px;justify-content:center;margin:8px 0 18px}
+.cd div{flex:1 1 0;min-width:0;max-width:110px;padding:10px 2px;border:1.5px solid var(--gold2);border-radius:14px;background:linear-gradient(#fffdf6,#fbe9c4);box-shadow:0 6px 0 #d9b25c,0 10px 14px rgba(70,20,10,.25);transform:rotateX(14deg)}
+.cd b{display:block;font:700 clamp(1.6rem,7vw,2.6rem) 'Playfair Display',serif;line-height:1.1;color:var(--crimson)}
+.cd small{font-size:clamp(.8rem,2.8vw,1rem);color:var(--magenta);font-weight:700}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:14px}
+.info>div{padding:14px 10px;border:1.5px solid var(--gold2);border-radius:18px;background:linear-gradient(#fffdf6,#fff1d6);transition:transform .4s}
+.info>div:hover{transform:translateY(-6px) rotateX(8deg)}
+.info h3{color:var(--teal);font-size:clamp(1.25rem,4.2vw,1.7rem)}
+.rings{position:relative;width:110px;height:70px;margin:0 auto 6px;perspective:500px}
+.rings i{position:absolute;top:6px;width:52px;height:52px;border-radius:50%;border:6px solid var(--gold2);box-shadow:inset 0 0 6px rgba(120,80,10,.5),0 3px 8px rgba(70,20,10,.35);animation:ring 5s linear infinite}
+.rings i:first-child{left:14px}.rings i:last-child{right:14px;animation-direction:reverse}
+@keyframes ring{to{transform:rotateY(360deg)}}
+.thanks{font:400 clamp(2.6rem,11vw,4.6rem) var(--script);color:#e0306b;line-height:1.2;text-shadow:0 2px 0 #fff;margin:.1em 0}
+.acts{margin-top:8px}
+.sign{margin-top:16px;color:var(--maroon)}
+
+@media(max-height:780px){.ic{width:36px;height:36px;margin-bottom:2px}.cd{margin:2px 0 12px}.info>div{padding:8px 8px}.panel{padding-top:44px;padding-bottom:30px}.panel h2{margin-bottom:.1em}.orn{margin:.1em 0 .5em}}
+.rv{opacity:0;transform:translateY(34px);transition:opacity 1s,transform 1s}
+.rv.l{transform:translateX(-50px)}.rv.r{transform:translateX(50px)}.rv.z{transform:scale(.8)}
+.rv.x{transform:perspective(700px) rotateX(-45deg) translateY(30px);transform-origin:50% 100%}
+body.live .rv.in{opacity:1;transform:none}
+.d1{transition-delay:.15s}.d2{transition-delay:.3s}.d3{transition-delay:.45s}
+@media(min-width:900px){
+ html[lang=te] .title{font-size:clamp(3rem,min(4.6vw,8svh),4.8rem)!important}
+ html[lang=te] body{font-size:clamp(1.35rem,min(2.1vw,3.9svh),1.9rem)}
+ html[lang=te] h2{font-size:clamp(2.3rem,min(4vw,7svh),3.9rem)}
+ html[lang=te] .names-big{font-size:clamp(1.7rem,min(3vw,5svh),2.6rem)}
+ html[lang=te] .person h3{font-size:clamp(1.8rem,min(3vw,5svh),2.8rem)}
+ html[lang=te] .person p{font-size:clamp(1.15rem,min(1.9vw,3.2svh),1.6rem)}
+ html[lang=te] .info h3{font-size:clamp(1.6rem,2.6vw,2.2rem)}
+ html[lang=te] .btn{font-size:clamp(1.15rem,1.7vw,1.5rem)}
+ html[lang=te] .free{width:min(100%,820px)}
+ html[lang=te] .panel{width:min(100%,900px)}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}}
+</style>
+</head>
+<body class="locked">
+
+<svg width="0" height="0" style="position:absolute"><defs>
+ <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 018-2.7A4.5 4.5 0 0120 10c0 5.8-8 11-8 11z"/></symbol>
+ <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+ <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+ <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+ <symbol id="i-rings" viewBox="0 0 24 24"><circle cx="9" cy="15" r="5"/><circle cx="15" cy="15" r="5"/><path d="M12 3l2 2-2 2-2-2z"/></symbol>
+ <symbol id="i-diya" viewBox="0 0 24 24"><path d="M3 14h18a9 9 0 01-18 0z"/><path d="M12 3c2.4 3 2.4 5.4 0 7.4-2.4-2-2.4-4.4 0-7.4z"/></symbol>
+ <symbol id="i-scroll" viewBox="0 0 24 24"><path d="M5 4h12a2 2 0 012 2v12a2 2 0 002 2H8a3 3 0 01-3-3z"/><path d="M5 4a2 2 0 00-2 2v1h2M9 9h6M9 13h6"/></symbol>
+ <symbol id="i-wa" viewBox="0 0 24 24"><path d="M4 20l1.3-4.2A8 8 0 1112 20a8 8 0 01-3.8-1z"/><path d="M9 8.5c.5 3 2.5 5 5.5 6l1.2-1.5-2-1-.8.8c-1-.4-1.8-1.2-2.2-2.2l.8-.8-1-2z"/></symbol>
+</defs></svg>
+
+<div class="bg" id="bg-a"></div><div class="bg" id="bg-b"></div><div class="bg" id="bg-c"></div>
+<div id="petals"></div>
+<div class="lang"><button class="bt" data-l="te">తెలుగు</button><button class="be" data-l="en">EN</button></div>
+
+<!-- COVER -->
+<div class="cover" id="cover" role="button" tabindex="0" aria-label="Open invitation">
+  <div class="fill"></div>
+  <div class="persp"><div class="stage">
+    <img class="base" src="card-closed.webp" alt="Wedding invitation card">
+    <div class="inside"><img src="ganesha.jpg" alt="Lord Ganesha"></div>
+    <div class="leaf l"><div class="f"><img src="card-closed.webp" alt=""></div><div class="k"></div></div>
+    <div class="leaf r"><div class="f"><img src="card-closed.webp" alt=""></div><div class="k"></div></div>
+  </div></div>
+  <div class="tap"><span class="te">కార్డును తాకి తెరవండి</span><span class="en">TAP THE CARD TO OPEN</span></div>
+</div>
+
+<!-- SCENE 1: Ganesha blessing -->
+<section class="sc" data-bg="c"><div class="free">
+  <div class="gwrap rv z">
+    <svg viewBox="0 0 400 400" aria-label="మేడిశెట్టి వారి పెళ్లి ఆహ్వానం">
+      <defs><path id="arc" d="M200 358A158 158 0 1 1 200 42A158 158 0 1 1 200 358"/></defs>
+      <circle class="dots" cx="200" cy="200" r="136"/>
+      <text text-anchor="middle" class="te"><textPath href="#arc" startOffset="50%">మేడిశెట్టి వారి పెళ్లి ఆహ్వానం</textPath></text>
+      <text text-anchor="middle" class="en"><textPath href="#arc" startOffset="50%">Medisetti Vari Pelli Ahvanam</textPath></text>
+    </svg>
+    <img class="ganesha" src="ganesha.jpg" alt="Lord Ganesha">
+  </div>
+  <h2 class="rv"><span class="te">ఓం శ్రీ గణేశాయ నమః</span><span class="en">Om Shri Ganeshaya Namah</span></h2>
+  <p class="rv d1"><span class="te">విఘ్నాలు తొలగించే ఆ వినాయకుని ఆశీస్సులతో, మా ఇంట జరిగే ఈ శుభకార్యానికి మిమ్మల్ని సాదరంగా ఆహ్వానిస్తున్నాము.</span>
+  <span class="en">With the blessings of Lord Ganesha, the remover of obstacles, we begin this auspicious journey and warmly invite you to share our joy.</span></p>
+  <button class="btn main rv d2" data-next><span class="te">ముందుకు సాగండి</span><span class="en">Continue</span> ↓</button>
+</div></section>
+
+<!-- SCENE 2: invitation -->
+<section class="sc" data-bg="b"><div class="panel"><div class="ico"><svg><use href="#i-scroll"/></svg></div>
+  <h2 class="rv x title"><span class="te">మేడిశెట్టి వారి పెళ్లి ఆహ్వానం</span><span class="en">Medisetti Vari Pelli Ahvanam</span></h2>
+  <div class="orn"><i></i></div>
+  <p class="rv x d1"><span class="te">భగవంతుని ఆశీస్సులతో, పెద్దల దీవెనలతో మా కుమారుని వివాహ మహోత్సవానికి మిమ్మల్ని ఆహ్వానిస్తున్నాము</span>
+  <span class="en">With the blessings of the Almighty and our elders, we invite you to the wedding of our son</span></p>
+  <div class="parents rv x d2"><p><span class="te">వరుని తల్లిదండ్రులు</span><span class="en">Parents of the groom</span></p>
+  <p><b><span class="te">శ్రీ మేడిశెట్టి పాపారావు</span><span class="en">Sri Medisetti PapaRao</span></b><br>&amp; <b><span class="te">శ్రీమతి కనక మహాలక్ష్మి</span><span class="en">Srimathi Kanaka Mahalakshmi</span></b></p></div>
+  <p class="rv x d3"><span class="te">మీ రాక, ఆశీస్సులు మా వేడుకను పరిపూర్ణం చేస్తాయి.</span><span class="en">Your presence and blessings will complete our celebration.</span></p>
+</div></section>
+
+<!-- SCENE 3: couple -->
+<section class="sc" data-bg="a"><div class="panel"><div class="ico"><svg><use href="#i-rings"/></svg></div>
+  <h2 class="rv x"><span class="te">వధూవరులు</span><span class="en">The Couple</span></h2>
+  <div class="orn"><i></i></div>
+  <div class="couple">
+    <div class="person rv l"><div class="flip"><div class="flipin"><img src="face-groom.jpg" alt="Madhu, the groom" loading="lazy"><img class="bk" src="groom.jpg" alt="" loading="lazy"></div></div>
+      <h3><span class="te">మధు</span><span class="en">Madhu</span></h3><p><span class="te">చి. మేడిశెట్టి మధుసూదన రావు</span><span class="en">Chi. Medisetti Madhusudhana Rao</span></p></div>
+    <div class="amp">&amp;</div>
+    <div class="person rv r"><div class="flip"><div class="flipin"><img src="face-bride.jpg" alt="Dhanusha, the bride" loading="lazy"><img class="bk" src="bride.jpg" alt="" loading="lazy"></div></div>
+      <h3><span class="te">ధనుష</span><span class="en">Dhanusha</span></h3><p><span class="te">చి.సౌ. ఏలిగెంటి ధనుష దేవి</span><span class="en">Chi.Sou. Eligenti Dhanusha Devi</span></p></div>
+  </div>
+  <p class="hint"><span class="te">ఫోటోను తాకండి ↻</span><span class="en">Tap a photo to flip ↻</span></p>
+</div></section>
+
+<!-- SCENE 4: date & time -->
+<section class="sc" data-bg="c"><div class="panel"><div class="ico"><svg><use href="#i-cal"/></svg></div>
+  <h2 class="rv x"><span class="te">శుభ ముహూర్తం</span><span class="en">Save the Date</span></h2>
+  <div class="orn"><i></i></div>
+  <div class="cd rv z" id="cd"></div>
+  <div class="info">
+    <div class="rv x d1"><div class="ic"><svg><use href="#i-cal"/></svg></div><h3><span class="te">తేదీ</span><span class="en">Date</span></h3><p><span class="te">గురువారం<br>29 అక్టోబర్ 2026</span><span class="en">Thursday<br>29 October 2026</span></p></div>
+    <div class="rv x d2"><div class="ic"><svg><use href="#i-clock"/></svg></div><h3><span class="te">సమయం</span><span class="en">Time</span></h3><p><span class="te">రాత్రి<br>7:30 గంటలకు</span><span class="en">Night<br>7:30 PM</span></p></div>
+  </div>
+</div></section>
+
+<!-- SCENE 5: venue -->
+<section class="sc" data-bg="b"><div class="panel"><div class="ico"><svg><use href="#i-pin"/></svg></div>
+  <h2 class="rv x"><span class="te">వేదిక</span><span class="en">Venue</span></h2>
+  <div class="orn"><i></i></div>
+  <p class="rv x d1"><span class="te">వేదిక చేరుకునే మార్గం కోసం క్రింది బటన్ నొక్కండి</span><span class="en">Tap below for the location and directions</span></p>
+  <a class="btn main rv x d2" href="https://maps.app.goo.gl/JUBtAyPiuVdmaA34A" target="_blank" rel="noopener"><svg width="24" height="24"><use href="#i-pin"/></svg><span class="te">గూగుల్ మ్యాప్స్‌లో చూడండి</span><span class="en">View on Google Maps</span></a>
+  <p class="rv x d3" style="margin-top:14px"><span class="te">రాత్రి 7:30 గంటలకు మీ కోసం ఎదురుచూస్తుంటాము</span><span class="en">We will be waiting for you at 7:30 PM</span></p>
+</div></section>
+
+<!-- SCENE 6: ending -->
+<section class="sc" data-bg="a" id="end"><div class="panel"><div class="ico"><svg><use href="#i-heart"/></svg></div>
+  <div class="rings rv z"><i></i><i></i></div>
+  <div class="thanks rv x"><span class="te">ధన్యవాదాలు</span><span class="en">Thank You</span></div>
+  <div class="orn"><i></i></div>
+  <p class="rv x d1"><span class="te">మీ రాక కోసం ఎదురుచూస్తూ... మీ ఆశీస్సులే మా నూతన జీవితానికి పునాది.</span><span class="en">Awaiting your presence — your blessings are the foundation of our new life together.</span></p>
+  <div class="acts rv x d2">
+    <button class="btn" id="calBtn"><svg width="24" height="24"><use href="#i-cal"/></svg><span class="te">క్యాలెండర్‌కు జోడించండి</span><span class="en">Add to Calendar</span></button>
+    <a class="btn wa" id="waBtn" target="_blank" rel="noopener"><svg width="24" height="24"><use href="#i-wa"/></svg><span class="te">షేర్ చేయండి</span><span class="en">Share on WhatsApp</span></a>
+  </div>
+  <div class="sign rv x d3">
+    <div class="script" style="font-size:clamp(2rem,8vw,3.2rem);color:var(--rose)"><span class="te">ధనుష &amp; మధు</span><span class="en">Dhanusha &amp; Madhu</span></div>
+    <p><span class="te">ప్రేమతో, ఆశీస్సులతో — మేడిశెట్టి కుటుంబం</span><span class="en">With love &amp; blessings — Medisetti Family</span></p>
+  </div>
+</div></section>
+
+<script>
+const $=id=>document.getElementById(id), cover=$('cover'), bgs={};
+document.querySelectorAll('.bg').forEach(b=>bgs[b.id.slice(3)]=b);
+
+function setLang(l){
+  document.documentElement.lang=l;
+  document.title=l==='te'?'మేడిశెట్టి వారి పెళ్లి ఆహ్వానం':'Medisetti Vari Pelli Ahvanam';
+  try{localStorage.setItem('lang',l)}catch(e){}
+  tick();
+}
+document.querySelectorAll('.lang button').forEach(b=>b.onclick=e=>{e.stopPropagation();setLang(b.dataset.l)});
+
+/* card corners on every decorated panel */
+document.querySelectorAll('.panel').forEach(p=>p.insertAdjacentHTML('afterbegin','<i class="co tl"></i><i class="co tr"></i><i class="co bl"></i><i class="co br"></i>'));
+
+/* open: doors swing open -> zoom into Ganesha -> fade into the invitation */
+let opened=false;
+function openCard(){
+  if(opened)return; opened=true;
+  cover.classList.add('opening');
+  setTimeout(()=>cover.classList.add('zoom'),2300);
+  setTimeout(()=>{cover.classList.add('out');document.body.classList.remove('locked');document.body.classList.add('live');start();petals()},3600);
+  setTimeout(()=>cover.remove(),5000);
+}
+cover.onclick=openCard;
+cover.onkeydown=e=>(e.key==='Enter'||e.key===' ')&&openCard();
+
+function start(){
+  const bgIO=new IntersectionObserver(es=>es.forEach(x=>{
+    if(!x.isIntersecting)return;
+    Object.values(bgs).forEach(b=>b.classList.toggle('on',b===bgs[x.target.dataset.bg]));
+  }),{rootMargin:'-50% 0px -50% 0px'});
+  document.querySelectorAll('.sc').forEach(s=>bgIO.observe(s));
+  const io=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('in')),{threshold:.2});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  document.querySelectorAll('[data-next]').forEach(b=>b.onclick=()=>b.closest('.sc').nextElementSibling.scrollIntoView({behavior:'smooth'}));
+  // grand finale: hearts & flowers rise when the last scene appears
+  new IntersectionObserver((es,o)=>es.forEach(x=>{if(x.isIntersecting){burst();o.disconnect()}}),{threshold:.6}).observe($('end'));
+  // 3D tilt on cards (mouse / pen)
+  document.querySelectorAll('.panel').forEach(p=>{
+    p.addEventListener('pointermove',e=>{if(e.pointerType==='touch')return;const r=p.getBoundingClientRect();
+      p.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*8+'deg');p.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*6+'deg')});
+    p.addEventListener('pointerleave',()=>{p.style.setProperty('--rx','0deg');p.style.setProperty('--ry','0deg')});
+  });
+  document.querySelectorAll('.flip').forEach(f=>f.onclick=()=>f.classList.toggle('on'));
+}
+
+function petals(){
+  const c=['#e8607f','#f2b84b','#fff','#ff9bb5'];
+  for(let i=0;i<16;i++){
+    const p=document.createElement('i');p.className='petal';
+    p.style.cssText=`left:${Math.random()*100}%;background:${c[i%4]};--dx:${Math.random()*160-80}px;animation-duration:${9+Math.random()*8}s;animation-delay:${Math.random()*10}s`;
+    $('petals').appendChild(p);
+  }
+}
+function burst(){
+  const e=['❤','🌸','✨','🪷','💛'];
+  for(let i=0;i<30;i++){
+    const p=document.createElement('i');p.className='pop';p.textContent=e[i%5];p.style.fontStyle='normal';
+    p.style.cssText+=`;left:${Math.random()*100}%;--dx:${Math.random()*120-60}px;--r:${Math.random()*360-180}deg;--t:${3+Math.random()*3}s;animation-delay:${Math.random()*1.5}s`;
+    $('petals').appendChild(p);setTimeout(()=>p.remove(),8000);
+  }
+}
+
+/* add to calendar (.ics) + WhatsApp share */
+$('calBtn').onclick=()=>{
+  const ics=['BEGIN:VCALENDAR','VERSION:2.0','BEGIN:VEVENT','DTSTART:20261029T140000Z','DTEND:20261029T170000Z','SUMMARY:Dhanusha & Madhu Wedding','DESCRIPTION:Medisetti Vari Pelli Ahvanam. Map: https://maps.app.goo.gl/JUBtAyPiuVdmaA34A','LOCATION:https://maps.app.goo.gl/JUBtAyPiuVdmaA34A','END:VEVENT','END:VCALENDAR'].join('\r\n');
+  const a=document.createElement('a');a.href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ics);a.download='wedding.ics';a.click();
+};
+$('waBtn').href='https://wa.me/?text='+encodeURIComponent('మేడిశెట్టి వారి పెళ్లి ఆహ్వానం — ధనుష & మధు | 29 Oct 2026, 7:30 PM\n'+location.href);
+
+const target=new Date('2026-10-29T19:30:00+05:30');
+function tick(){
+  const te=document.documentElement.lang==='te';
+  let d=Math.max(0,target-Date.now());
+  const v=[[te?'రోజులు':'Days',864e5],[te?'గంటలు':'Hrs',36e5],[te?'నిమి':'Min',6e4],[te?'సెకన్లు':'Sec',1e3]];
+  $('cd').innerHTML=v.map(([n,ms])=>{const x=Math.floor(d/ms);d-=x*ms;return `<div><b>${x}</b><small>${n}</small></div>`}).join('');
+}
+setInterval(tick,1000);
+let saved;try{saved=localStorage.getItem('lang')}catch(e){}
+setLang(saved==='en'?'en':'te');
+</script>
+</body>
+</html>
