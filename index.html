@@ -51,10 +51,10 @@ html[lang=te] .lang .bt,html[lang=en] .lang .be{background:var(--maroon);color:#
 /* ===== cover: gatefold card opens from the centre ===== */
 .cover{--sw:max(100vw,min(175vw,177.8svh));position:fixed;inset:0;z-index:25;background:#6b3f17;cursor:pointer;overflow:hidden;-webkit-tap-highlight-color:transparent;transition:opacity 1.3s}
 .cover.out{opacity:0;pointer-events:none}
-.fill{position:absolute;inset:-24px;background:url(card-closed.webp) center/cover;filter:blur(16px) brightness(.85)}
+.fill{position:absolute;inset:-24px;background:url(card-closed.webp) center/cover;filter:blur(22px) brightness(.78) saturate(1.1)}
 .persp{position:absolute;inset:0;perspective:1800px}
 .stage{position:absolute;left:50%;top:50%;width:var(--sw);aspect-ratio:1672/941;transform:translate(-50%,-50%);transform-style:preserve-3d;transition:transform 2.6s cubic-bezier(.5,0,.3,1),opacity 1.6s}
-.stage>img.base{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;-webkit-mask-image:radial-gradient(ellipse 75% 85% at 50% 50%,#000 60%,transparent 100%);mask-image:radial-gradient(ellipse 75% 85% at 50% 50%,#000 60%,transparent 100%)}
+.stage>img.base{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 24%,#000 76%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 24%,#000 76%,transparent 100%)}
 .inside{position:absolute;left:22.7%;top:20.7%;width:57.1%;height:58.5%;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle,#fffaf0,#f7e6bf 80%);opacity:0;transition:opacity .3s}
 .cover.opening .inside{opacity:1}
 .inside::before{content:'';position:absolute;left:50%;top:50%;width:200%;aspect-ratio:1;margin:-100% 0 0 -100%;background:repeating-conic-gradient(rgba(255,215,120,.5) 0 6deg,transparent 6deg 18deg);-webkit-mask-image:radial-gradient(circle,#000,transparent 40%);mask-image:radial-gradient(circle,#000,transparent 40%);animation:spin 40s linear infinite}
